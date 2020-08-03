@@ -1,0 +1,39 @@
+ion-title {
+    text-align: end;
+}
+
+.toolbar {
+    display: flex;
+}
+
+.title {
+    text-align: center;
+}
+
+.change {
+    border-radius: 16px;
+    width: 24px;
+    height: 4px;
+    margin-right: 8px;
+}
+
+.field-icon {
+    width: 2em;
+    height: 4em;
+    margin-right: 16px;
+}
+
+.field-div {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.submit {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

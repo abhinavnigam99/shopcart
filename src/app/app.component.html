@@ -1,3 +1,30 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-content>
+      <div *ngFor="let p of appPages">
+        <ion-menu-toggle *ngIf='p.url'>
+          <ion-item routerDirection="root" [routerLink]="p.url">
+            <ion-label>
+              {{p.title}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item button *ngIf='p.subPages?.length>0' (click)='p.open = !p.open' detail='false'>
+          <ion-icon slot='end' name='add-outline' *ngIf='!p.open'></ion-icon>
+          <ion-icon slot='end' name='remove-outline' *ngIf='p.open'></ion-icon>
+          <ion-label>{{p.title}}</ion-label>
+        </ion-item>
+        <ion-list *ngIf='p.open'>
+          <ion-menu-toggle>
+            <ion-item *ngFor="let sub of p.subPages" routerDirection="root" [routerLink]="sub.url" style="padding-left: 16px;">
+              <ion-label>
+                {{sub.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </div>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

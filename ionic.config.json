@@ -1,5 +1,8 @@
 {
   "name": "brainvire",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

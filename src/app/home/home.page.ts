@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  firstTime: any;
 
-  constructor() {}
-
+  constructor(private storage: Storage) {
+    /* this.storage.set('firstTime', true); */
+  }
 }
