@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,7 @@ export class DashboardPage implements OnInit {
     autoplay: true
   };
 
-  constructor() {
+  constructor(private router: Router) {
     this.slider =
     {
       isBeginningSlide: true,
@@ -59,5 +60,9 @@ export class DashboardPage implements OnInit {
     slideView.isEnd().then((istrue) => {
       object.isEndSlide = istrue;
     });
+  }
+
+  redirect() {
+    this.router.navigate(['/dashboard']);
   }
 }
